@@ -28,11 +28,15 @@ function crearSwatch(colorHSL, colorHEX, nombre) {
   elNombre.className = "swatch_nombre";
   elNombre.textContent = nombre;
 
-  const elCodigo = document.createElement("p");
-  elCodigo.className = "swatch_codigo";
-  elCodigo.textContent = colorHEX + " · " + colorHSL;
+  const codHEX = document.createElement("p");
+  codHEX.className = "swatch_codHEX";
+  codHEX.textContent = "HEX: " + colorHEX;
 
-  info.append(elNombre, elCodigo);
+  const codHSL = document.createElement("p");
+  codHSL.className = "swatch_codHSL";
+  codHSL.textContent = "HSL: " + colorHSL;
+
+  info.append(elNombre, codHEX, codHSL);
 
   swatch.append(color, info);
 
@@ -74,8 +78,6 @@ inputCant.addEventListener("change", function () {
   }
 });
 
-// end jmvo
-
 if (boton) {
   boton.addEventListener("click", function () {
     renderPaleta(Number(selector.value));
@@ -89,3 +91,9 @@ selector.addEventListener("change", function () {
 });
 
 renderPaleta(6);
+
+
+
+
+
+

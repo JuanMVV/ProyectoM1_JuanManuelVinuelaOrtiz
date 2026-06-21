@@ -149,10 +149,22 @@ main h2 {
   font-size: 1rem;
 }
 
-.swatch_codigo {
+.swatch_codHEX {
   font-size: 0.875rem;
-  color: var(--color-texto-suave);
+  text-align: center; 
+  font-weight: 500;  
+  background-color: var(--color-primario);
+  color: var(--color-primario-oscuro);
 }
+
+.swatch_codHSL {
+  font-size: 0.875rem;
+  text-align: center;
+   font-weight: 500;
+  background-color: var(--color-primario-claro);
+  color: var(--color-primario-oscuro);  
+}
+
 
 .swatch_color-claro {
   background-color: var(--color-primario-claro);
