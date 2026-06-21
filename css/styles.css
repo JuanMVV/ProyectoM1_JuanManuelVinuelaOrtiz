@@ -5,25 +5,24 @@
   box-sizing: border-box;
 }
 
-/* ===== Variables de colores ===== */
+/* ===== Variables de colores flúor - Fondo oscuro ===== */
 :root {
-  /* Marca - mismo Hue 330, variando Lightness */
-  --color-primario: hsl(330, 85%, 55%); /* #ec3a8b */
-  --color-primario-claro: hsl(330, 85%, 72%); /* #f37bb1 */
-  --color-primario-oscuro: hsl(330, 75%, 40%); /* #b3196a */
+  /* Marca - Rosa flúor neón */
+  --color-primario: hsl(200, 82%, 28%);
+  --color-primario-claro: hsl(200, 100%, 80%); 
+  --color-primario-oscuro: hsl(200, 8%, 3%);
 
-  /* Acento (cian) */
-  --color-acento: hsl(190, 90%, 45%); /* #0db4da */
-  --color-acento-oscuro: hsl(190, 90%, 35%); /* #0a8caa */
+  /* Acento - Verde flúor neón */
+  --color-acento: hsl(140, 100%, 50%); 
+  --color-acento-oscuro: hsl(140, 90%, 40%);
 
-  /* Neutros (Hue frio 220) */
-  --color-fondo: hsl(220, 30%, 98%); /* #f8fafc */
-  --color-superficie: hsl(0, 0%, 100%); /* #ffffff */
-  --color-borde: hsl(220, 15%, 88%); /* #dcdfe6 */
-  --color-texto: hsl(220, 25%, 18%); /* #232b3a */
-  --color-texto-suave: hsl(220, 12%, 45%); /* #666f80 */
+  /* Neutros - Fondo oscuro para resaltar el flúor */
+  --color-fondo: hsl(220, 15%, 12%); /* #1a1f2e */
+  --color-superficie: hsl(220, 12%, 18%); /* #23283a */
+  --color-borde: hsl(220, 10%, 30%); /* #3d4252 */
+  --color-texto: hsl(0, 0%, 98%); /* #fafafa */
+  --color-texto-suave: hsl(220, 8%, 70%); /* #b3b8c0 */
 }
-
 /* ===== Base ===== */
 body {
   font-family: "Nunito", sans-serif;
@@ -91,7 +90,7 @@ h3 {
   color: var(--color-primario);
 }
 
-/* ===== Layout: main (contenedor centrado) ===== */
+/* = Layout: main (contenedor centrado) = */
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -104,8 +103,8 @@ main h2 {
 }
 
 .mayuscula {
-  background-color:  var(--color-primario);
-  color: var(--color-superficie);
+  background-color:  var(--color-primario-oscuro);
+  color: var(--color-acento);
   font-family: Monospace;
   font-size: 64px;      
   font-weight: 900;      
@@ -113,7 +112,7 @@ main h2 {
 }
 
 .mayuscula:hover {
-  color: yellow;
+  color: rgb(219, 29, 213);
 }
 
 
@@ -123,11 +122,11 @@ main h2 {
   gap: 1.5rem;
 }
 
-/* ===== Componente: Swatch ===== */
+/* ===== Componentes dinamicos: Swatch ===== */
 .swatch {
   display: flex;
   flex-direction: column;
-  border-radius: 0.75rem;
+  border-radius: 20%;
   overflow: hidden;
   background-color: var(--color-superficie);
   box-shadow: 0 2px 8px hsl(220 25% 18% / 0.1);
@@ -137,12 +136,12 @@ main h2 {
 }
 
 .swatch_color {
-  height: 7rem;
+  height: 9rem;
   background-color: var(--color-primario);
 }
 
 .swatch_info {
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 .swatch_nombre {
@@ -167,7 +166,8 @@ main h2 {
 
 .swatch:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px hsl(220 25% 18% / 0.15);
+  border: solid var(--color-acento);  
+  box-shadow: 0 8px 20px hsla(0, 0%, 100%, 0.15);
 }
 
 .swatch:focus {
@@ -238,14 +238,16 @@ footer {
 }
 
 .boton-primario {
-  background-color: red;
-  color: #fff;
+  background-color: var(--color-primario-claro);
+  color: var(--color-borde);
 }
 
 .boton-primario:hover {
-  background-color: var(--color-superficie);
-  border: 1px solid, black;  
-  color: red;
+  background-color: var(--color-acento-oscuro);
+  border: 2px solid, black;
+  font-size: larger;
+  font-weight: 800;  
+  color: var(--color-texto);
 }
 
 .boton-primario:active {
@@ -281,12 +283,12 @@ footer {
   box-shadow: 0 0 0 3px hsl(190 90% 45% / 0.25);
 }
 
-.controles_input {
-  width: 60px;
+#input-cantidad {
+  width: 80px;
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
   padding: 0.65rem 1.25rem 0.65rem 0.9rem;
-  border: 2px solid var(--color-borde);
+  border: 2px solid var(--color-acento);
   border-radius: 0.5rem;
   background-color: var(--color-superficie);
   color: var(--color-texto);

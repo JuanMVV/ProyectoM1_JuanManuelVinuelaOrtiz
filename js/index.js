@@ -61,6 +61,20 @@ function renderPaleta(cantidad) {
 
 const boton = document.getElementById("generar");
 const selector = document.getElementById("cantidad");
+const inputCant = document.getElementById("input-cantidad");
+
+inputCant.addEventListener("change", function () {
+  const cant = Number(inputCant.value);
+  if (cant > 0 && cant <= 10) {
+    renderPaleta(cant);
+  } else {
+    alert("La cantidad debe ser entre 1 y 10");
+    inputCant.value = "";     
+    inputCant.focus(); 
+  }
+});
+
+// end jmvo
 
 if (boton) {
   boton.addEventListener("click", function () {

@@ -29,7 +29,7 @@
       <section id="colores">
         <h2><span class="mayuscula">p</span>aleta de <span class="mayuscula">c</span>olores</h2>
 
-        <!-- Boton nuevo: dispara la generacion de colores -->
+        <!-- Boton generar nuevos: genera paleta de colores -->
         <div class="controles">
           <button class="boton boton-primario" id="generar">Generar colores Random</button>
           <div class="controles_campo">
@@ -39,10 +39,8 @@
               <option value="8">8 colores</option>
               <option value="10">10 colores</option>
             </select>
-
             <label class="controles_label">ó escribir cantidad:</label>
-            <input class="controles_input" id="input-cantidad" type="text" maxlength="2">
-
+            <input id="input-cantidad" type="number" maxlength="2" min="1" max="10">
           </div>
         </div>
 
@@ -51,7 +49,7 @@
     </main>
 
     <footer>
-      <p>Colores Random © 2026 | Todos los derechos reservados | Términos y condiciones</p>
+      <p>ChromaStudio © 2026 | Todos los derechos reservados | Términos y condiciones</p>
     </footer>
 
     <script src="./js/index.js"></script>
