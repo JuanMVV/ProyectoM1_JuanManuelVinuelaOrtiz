@@ -16,6 +16,7 @@
   <body>
     <header>
       <nav class="nav">
+        <!-- referencia a la ubicacion del logo -->
         <img src="./assest/img/chromastudio_full_logo.png" alt="ChromaStudio" class="navbar-logo">         
         <ul class="nav_links">
           <li><a class="nav_link" href="#colores">Generar Colores</a></li>   
@@ -38,8 +39,13 @@
               <option value="8">8 colores</option>
               <option value="10">10 colores</option>
             </select>
+
+            <label class="controles_label">ó escribir cantidad:</label>
+            <input class="controles_input" id="input-cantidad" type="text" maxlength="2">
+
           </div>
         </div>
+
         <section class="galeria" id="galeria"></section>
       </section>
     </main>
