@@ -17,13 +17,14 @@
   --color-acento-oscuro: hsl(140, 90%, 40%);
 
   /* Neutros - Fondo oscuro para resaltar el flúor */
-  --color-fondo: hsl(220, 15%, 12%); /* #1a1f2e */
-  --color-superficie: hsl(220, 12%, 18%); /* #23283a */
-  --color-borde: hsl(220, 10%, 30%); /* #3d4252 */
-  --color-texto: hsl(0, 0%, 98%); /* #fafafa */
+  --color-fondo: hsl(218, 8%, 19%); /* #1a1f2e */
+  --color-superficie: hsl(219, 15%, 31%); /* #23283a */
+  --color-borde: hsl(221, 56%, 27%); /* #3d4252 */
+  --color-texto: hsl(0, 21%, 89%); /* #fafafa */
   --color-texto-suave: hsl(220, 8%, 70%); /* #b3b8c0 */
 }
 /* ===== Base ===== */
+
 body {
   font-family: "Nunito", sans-serif;
   background-color: var(--color-fondo);
@@ -49,6 +50,12 @@ h2 {
 
 h3 {
   font-size: 1.25rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  border-bottom: 2PX solid var(--color-acento);
 }
 
 
@@ -126,7 +133,7 @@ main h2 {
 .swatch {
   display: flex;
   flex-direction: column;
-  border-radius: 20%;
+  border-radius: 20px;
   overflow: hidden;
   background-color: var(--color-superficie);
   box-shadow: 0 2px 8px hsl(220 25% 18% / 0.1);
@@ -220,7 +227,7 @@ footer {
   padding: 1.25rem;
   margin-bottom: 1.5rem;
   background-color: var(--color-superficie);
-  border: 1px solid var(--color-borde);
+  border: 1.5px solid var(--color-borde);
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px hsl(220 25% 18% / 0.06);
 }
@@ -300,9 +307,19 @@ footer {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
   padding: 0.65rem 1.25rem 0.65rem 0.9rem;
-  border: 2px solid var(--color-acento);
+  border: 2px solid var(--color-borde);
   border-radius: 0.5rem;
   background-color: var(--color-superficie);
   color: var(--color-texto);
   cursor: pointer;       
+}
+
+#input-cantidad:hover {
+  border-color: var(--color-primario-claro);
+}
+
+#input-cantidad:focus-visible {
+  outline: none;
+  border-color: var(--color-acento);
+  box-shadow: 0 0 0 3px hsl(190 90% 45% / 0.25);
 }
