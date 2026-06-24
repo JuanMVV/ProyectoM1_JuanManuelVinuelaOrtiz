@@ -21,7 +21,7 @@
       <img src="./assest/img/chromastudio_full_logo.png" alt="ChromaStudio" class="navbar-logo">              
       <h1>Chroma Studio</h1>
       <ul class="nav_links">
-        <li><a class="nav_link" href="#generador-paleta">Generar Paleta</a></li>   
+        <li><a class="nav_link" href="#controles">Generar Paleta</a></li>   
         <!-- <li><a class="nav_link" href="#paletas-guardadas">Guardar Paleta</a></li>    -->
       </ul>
       </nav>
@@ -33,7 +33,7 @@
         <h2><span class="mayuscula">p</span>aleta de <span class="mayuscula">c</span>olores</h2>
 
         <!-- Boton generar: genera paleta de colores -->
-        <div class="controles">
+        <div class="controles"  id="controles">
           <button class="boton boton-primario" id="generar">Generar colores Random</button>
           <div class="controles_campo">
             <label class="controles_label" for="cantidad">Seleccionar cantidad de colores</label>
@@ -60,5 +60,7 @@
     </footer>
 
     <script src="./js/index.js"></script>
+    <div id="toast-error" class="toast_error"></div>
+    <div id="toast" class="toast"></div>
   </body>
 </html>

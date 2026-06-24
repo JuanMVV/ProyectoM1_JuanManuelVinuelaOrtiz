@@ -93,7 +93,7 @@ inputCant.addEventListener("change", function () {
   if (cant > 0 && cant <= 10) {
     renderPaleta(cant);
   } else {
-    alert("La cantidad debe ser entre 1 y 10");
+    showToastError("La cantidad ingresada debe ser entre 1 y 10");
     inputCant.value = "";     
     inputCant.focus(); 
   }
@@ -130,14 +130,47 @@ document.addEventListener("click", async (e) => {
     await navigator.clipboard.writeText(text);
     const original = btn.textContent;
     btn.textContent = "✓";
+    showToast("Copiado al portapapeles");
     setTimeout(() => {
       btn.textContent = original;
     }, 1800);
   } catch (err) {
     console.error("Error al copiar: ", err);
-    alert("No se pudo copiar al portapapeles");
+    showToast("No se pudo copiar al portapapeles", 2500);
   }
 });
 
 
+// region msn toast
+function showToast(message, duration = 1800) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
 
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  if (toast._timeoutId) {
+    clearTimeout(toast._timeoutId);
+  }
+
+  toast._timeoutId = setTimeout(() => {
+    toast.classList.remove('show');
+  }, duration);
+}
+
+
+function showToastError(message, duration = 1800) {
+  const toast = document.getElementById('toast-error');
+  if (!toast) return;
+
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  if (toast._timeoutId) {
+    clearTimeout(toast._timeoutId);
+  }
+
+  toast._timeoutId = setTimeout(() => {
+    toast.classList.remove('show');
+  }, duration);
+}

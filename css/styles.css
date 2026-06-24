@@ -22,6 +22,11 @@
   --color-borde: hsl(221, 56%, 27%); /* #3d4252 */
   --color-texto: hsl(0, 21%, 89%); /* #fafafa */
   --color-texto-suave: hsl(220, 8%, 70%); /* #b3b8c0 */
+
+/* Mensajes de Errores */
+  --color-error-fondo: hsl(0, 91%, 46%); /* #b3b8c0 */
+  --color-error-borde: hsl(220, 3%, 39%); /* #b3b8c0 */
+  --color-error-texto: hsl(220, 27%, 96%); /* #b3b8c0 */
 }
 /* ===== Base ===== */
 
@@ -231,7 +236,11 @@ footer {
   background-color: var(--color-superficie);
   border: 1.5px solid var(--color-borde);
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px hsl(220 25% 18% / 0.06);
+  box-shadow: 0 2px 8px hsl(220 25% 18% / 0.06);  
+}
+
+#controles {
+  scroll-margin-top: 100px;
 }
 
 .controles_campo {
@@ -351,3 +360,48 @@ footer {
   color: var(--color-fondo);
   transform: scale(1.35);
 }
+
+/* region msn Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-primario-claro);
+  color: var(--color-borde);
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast_error {
+  position: fixed;
+  top: 240px;
+  right: 20px;
+  background-color: var(--color-error-fondo);
+  color: var(--color-error-texto);
+  padding: 10px 16px;
+  border-color: var(--color-error-borde);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.toast_error.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
