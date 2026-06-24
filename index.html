@@ -18,19 +18,21 @@
     <header>
       <nav class="nav">
         <!-- referencia a la ubicacion del logo -->
-        <img src="./assest/img/chromastudio_full_logo.png" alt="ChromaStudio" class="navbar-logo">         
-        <ul class="nav_links">
-          <li><a class="nav_link" href="#colores">Generar Colores</a></li>   
-        </ul>
+      <img src="./assest/img/chromastudio_full_logo.png" alt="ChromaStudio" class="navbar-logo">              
+      <h1>Chroma Studio</h1>
+      <ul class="nav_links">
+        <li><a class="nav_link" href="#generador-paleta">Generar Paleta</a></li>   
+        <!-- <li><a class="nav_link" href="#paletas-guardadas">Guardar Paleta</a></li>    -->
+      </ul>
       </nav>
     </header>
 
     <!-- Navegacion principal -->
     <main>
-      <section id="colores">
+      <section id="generador-paleta">
         <h2><span class="mayuscula">p</span>aleta de <span class="mayuscula">c</span>olores</h2>
 
-        <!-- Boton generar nuevos: genera paleta de colores -->
+        <!-- Boton generar: genera paleta de colores -->
         <div class="controles">
           <button class="boton boton-primario" id="generar">Generar colores Random</button>
           <div class="controles_campo">
@@ -38,7 +40,7 @@
             <select class="select" id="cantidad">
               <option value="6">6 colores</option>
               <option value="8">8 colores</option>
-              <option value="10">10 colores</option>
+              <option value="9">9 colores</option>
             </select>
             <label class="controles_label">ó escribir cantidad:</label>
             <input id="input-cantidad" type="number" maxlength="2" min="1" max="10">
@@ -47,6 +49,10 @@
 
         <section class="galeria" id="galeria"></section>
       </section>
+
+      <!-- <section id="paletas-guardadas">
+        <h4>Paletas de colores a Guardar</h4>
+      </section> -->
     </main>
 
     <footer>

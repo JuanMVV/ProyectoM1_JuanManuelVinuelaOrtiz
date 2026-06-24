@@ -15,12 +15,10 @@ function crearSwatch(colorHSL, colorHEX, nombre) {
   const swatch = document.createElement("article");
   swatch.className = "swatch";
 
-  // Bloque superior: el rectangulo pintado con el color
   const color = document.createElement("div");
   color.className = "swatch_color";
   color.style.background = colorHSL;
 
-  // Zona inferior: nombre + codigos
   const info = document.createElement("div");
   info.className = "swatch_info";
 
@@ -28,16 +26,39 @@ function crearSwatch(colorHSL, colorHEX, nombre) {
   elNombre.className = "swatch_nombre";
   elNombre.textContent = nombre;
 
+  // --- HEX (icono + texto) ---
+  const rowHEX = document.createElement("div");
+  rowHEX.className = "swatch_code-row";
+
+  const btnCopyHex = document.createElement("button");
+  btnCopyHex.className = "copy-btn copy-hex";
+  btnCopyHex.type = "button";
+  btnCopyHex.textContent = "📋";
+  btnCopyHex.setAttribute("aria-label", "Copiar código HEX");
+
   const codHEX = document.createElement("p");
   codHEX.className = "swatch_codHEX";
   codHEX.textContent = "HEX: " + colorHEX;
+
+  rowHEX.append(btnCopyHex, codHEX);
+
+  // --- HSL (icono + texto) ---
+  const rowHSL = document.createElement("div");
+  rowHSL.className = "swatch_code-row";
+
+  const btnCopyHsl = document.createElement("button");
+  btnCopyHsl.className = "copy-btn copy-hsl";
+  btnCopyHsl.type = "button";
+  btnCopyHsl.textContent = "📋";
+  btnCopyHsl.setAttribute("aria-label", "Copiar código HSL");
 
   const codHSL = document.createElement("p");
   codHSL.className = "swatch_codHSL";
   codHSL.textContent = "HSL: " + colorHSL;
 
-  info.append(elNombre, codHEX, codHSL);
+  rowHSL.append(btnCopyHsl, codHSL);
 
+  info.append(elNombre, rowHEX, rowHSL);
   swatch.append(color, info);
 
   return swatch;
@@ -81,6 +102,7 @@ inputCant.addEventListener("change", function () {
 if (boton) {
   boton.addEventListener("click", function () {
     renderPaleta(Number(selector.value));
+    inputCant.value = "";
   });
 } else {
   console.log("No encontre el boton 'generar'. Revisa el id en el HTML.");
@@ -94,6 +116,28 @@ renderPaleta(6);
 
 
 
+// region copiar codigos
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest(".copy-btn");
+  if (!btn) return;
+  const row = btn.closest(".swatch_code-row");
+  if (!row) return;
+  const p = row.querySelector("p");
+  if (!p) return; 
+  const text = p.textContent.replace(/^HEX:\s*|^HSL:\s*/i, "").trim();
+
+  try {
+    await navigator.clipboard.writeText(text);
+    const original = btn.textContent;
+    btn.textContent = "✓";
+    setTimeout(() => {
+      btn.textContent = original;
+    }, 1800);
+  } catch (err) {
+    console.error("Error al copiar: ", err);
+    alert("No se pudo copiar al portapapeles");
+  }
+});
 
 
 
