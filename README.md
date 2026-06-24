@@ -92,7 +92,12 @@ A continuación se detalla cómo descargar o clonar el proyecto y ejecutarlo en 
 
 ### 2️⃣ Descargar el proyecto desde GitHub (ZIP)
 
-1. Ingresa al repositorio del proyecto en GitHub (link del repo que contiene este proyecto). 
+1. Ingresa al repositorio del proyecto en GitHub 
+
+```bash
+https://github.com/JuanMVV/ProyectoM1_JuanManuelVinuelaOrtiz
+```
+
 2. Haz clic en el botón **“Code”** y selecciona **“Download ZIP”**.  
 3. Descomprime el archivo ZIP en una carpeta de tu preferencia.  
 4. Abre la carpeta del proyecto en tu editor o directamente en el explorador de archivos.  
@@ -106,7 +111,7 @@ La aplicación se ejecutará localmente y podrás interactuar con el generador d
 
 1. Asegúrate de tener **Git** instalado. 
 2. Abre una terminal o consola (CMD, PowerShell, bash, etc.).  
-3. Ejecuta el siguiente comando, reemplazando la URL por la del repositorio real:
+3. Ejecuta el siguiente comando:
 
 ```bash
 git clone https://github.com/juanmvv/ProyectoM1_JuanManuelVinuelaOrtiz.git
@@ -155,7 +160,7 @@ Esta dinámica permite experimentar rápidamente con distintas combinaciones y t
 Algunas ideas de extensión para el proyecto:
 
 - Opción para **guardar** paletas favoritas en localStorage. 
-- Exportación de paletas en formato JSON o imagen. 
+- Exportación de paletas en formato JSON o imagen/pdf. 
 - Integración con frameworks o librerías de UI para mejorar la experiencia visual. 
 
 ***
