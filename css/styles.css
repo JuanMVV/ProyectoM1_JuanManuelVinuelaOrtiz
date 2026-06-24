@@ -17,16 +17,16 @@
   --color-acento-oscuro: hsl(140, 90%, 40%);
 
   /* Neutros - Fondo oscuro para resaltar el flúor */
-  --color-fondo: hsl(218, 8%, 19%); /* #1a1f2e */
-  --color-superficie: hsl(219, 15%, 31%); /* #23283a */
-  --color-borde: hsl(221, 56%, 27%); /* #3d4252 */
-  --color-texto: hsl(0, 21%, 89%); /* #fafafa */
-  --color-texto-suave: hsl(220, 8%, 70%); /* #b3b8c0 */
+  --color-fondo: hsl(218, 8%, 19%);
+  --color-superficie: hsl(219, 15%, 31%);
+  --color-borde: hsl(221, 56%, 27%); 
+  --color-texto: hsl(0, 21%, 89%);
+  --color-texto-suave: hsl(220, 8%, 70%); 
 
 /* Mensajes de Errores */
-  --color-error-fondo: hsl(0, 91%, 46%); /* #b3b8c0 */
-  --color-error-borde: hsl(220, 3%, 39%); /* #b3b8c0 */
-  --color-error-texto: hsl(220, 27%, 96%); /* #b3b8c0 */
+  --color-error-fondo: hsl(0, 91%, 46%);
+  --color-error-borde: hsl(220, 3%, 39%);
+  --color-error-texto: hsl(220, 27%, 96%);
 }
 /* ===== Base ===== */
 
@@ -61,8 +61,16 @@ header {
   position: sticky;
   top: 0;
   border-bottom: 2PX solid var(--color-acento);
+  background-color: var(--color-superficie);
+  z-index: 10;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 1.5rem;
+}
 
 .nav {
   display: flex;
@@ -70,7 +78,8 @@ header {
   justify-content: space-between;
   padding: 0.8rem 1.5rem; 
   background-color: var(--color-superficie);
-  box-shadow: 0 1px 3px hsl(220 25% 18% / 0.08);
+  box-shadow: 0 1px 3px hsl(220 25% 18% / 0.08);  
+  width: 100%;
 }
 
 .navbar-logo {
@@ -80,6 +89,7 @@ header {
     margin-bottom: auto;
     cursor: pointer;
     transition: transform 0.2s ease; 
+    flex: 0 0 auto;
 }
 
 .navbar-logo:hover {
@@ -90,6 +100,7 @@ header {
 .nav_links {
   display: flex;
   gap: 1.5rem;
+  flex-direction: column;
   list-style: none;
 }
 
@@ -103,7 +114,6 @@ header {
   color: var(--color-primario);
 }
 
-/* = Layout: main (contenedor centrado) = */
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -127,7 +137,6 @@ main h2 {
 .mayuscula:hover {
   color: rgb(219, 29, 213);
 }
-
 
 .galeria {
   display: grid;
@@ -177,7 +186,6 @@ main h2 {
   background-color: var(--color-primario-claro);
   color: var(--color-primario-oscuro);  
 }
-
 
 .swatch_color-claro {
   background-color: var(--color-primario-claro);
@@ -385,7 +393,7 @@ footer {
 
 .toast_error {
   position: fixed;
-  top: 240px;
+  top: 150px;
   right: 20px;
   background-color: var(--color-error-fondo);
   color: var(--color-error-texto);
@@ -404,4 +412,92 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* Region Switch ES-ENG */
+#lang-switcher {
+  display: inline-flex;
+  align-items: top;
+  justify-content: space-between;
+  gap: 0.15rem;
+  padding: 0.15rem;
+  border-radius: 999px;
+  background-color: var(--color-primario-claro);
+  border: 1px solid var(--color-borde);
+}
+
+.lang-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.4rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 999px;
+  color: var(--color-texto-suave);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.lang-flag {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px hsl(0 0% 0% / 0.3);
+}
+
+.lang-flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lang-label {
+  text-transform: uppercase;
+}
+
+.lang-btn.active {
+  background: linear-gradient(
+    135deg,
+    var(--color-fondo),
+    var(--color-primario-claro)
+  );
+  color: var(--color-primario-oscuro);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px hsl(220 50% 10% / 0.4);
+}
+
+.lang-btn:hover:not(.active),
+.lang-btn:focus-visible:not(.active) {
+  background-color: hsl(220 20% 25% / 0.8);
+  color: var(--color-texto);
+}
+
+@media (max-width: 600px) {
+  #lang-switcher {
+    align-self: flex-end;
+    margin-top: 0.25rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 

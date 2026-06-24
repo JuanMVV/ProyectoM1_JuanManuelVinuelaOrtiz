@@ -51,6 +51,6 @@ Una vez integrada la solución, reutilicé la misma lógica para crear mensajes 
 
 También utilicé la IA para:
 
-- Redactar y mejorar secciones de los `README.md`
-- Sugerir estilos y estructura visual de la documentación
-- Recomendar posibles funcionalidades futuras (guardado de paletas, exportación, mejoras de UI, etc.)
+- Redactar y mejorar secciones de los `README.md`.
+- Sugerir estilos y estructura visual de la documentación.
+- Recomendar posibles funcionalidades futuras (guardado de paletas, exportación, mejoras de UI, etc).

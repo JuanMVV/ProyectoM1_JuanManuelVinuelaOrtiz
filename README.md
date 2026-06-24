@@ -4,13 +4,14 @@
 
 # 📁 ChromaStudio – Proyecto M1
 
-ChromaStudio es una aplicación web que permite generar paletas de colores aleatorias de forma rápida, sencilla e intuitiva, ideal para desarrolladores, diseñadores y creadores de contenido que necesitan inspiración cromática. 
+ChromaStudio es una aplicación web que permite generar paletas de colores aleatorias de forma rápida, sencilla e intuitiva, ideal para desarrolladores, diseñadores y creadores de contenido que necesitan inspiración cromática. Además cuenta con la posibilidad de cambiar de idioma Español-Ingles 
 
 El usuario puede: 
 - Generar una paleta completa con el botón **“Generar colores Random”**. 
 - Cambiar la cantidad de colores mediante un **selector** de opciones predefinidas. 
 - Especificar manualmente la cantidad de colores que desea generar escribiendo un valor numérico. 
-- Visualizar por cada color sus valores en formato **HEX** y **HSL**. 
+- Visualizar por cada color sus valores en formato **HEX** y **HSL** y tiene la posibilidad de copiarlos en el portapapeles.
+- Cambiar de idioma Español/Inglés
 
 ***
 
@@ -37,45 +38,6 @@ https://juanmvv.github.io/ProyectoM1_JuanManuelVinuelaOrtiz/
 ```
 ***
 
-## 🖥️ Funcionalidades principales
-
-- Botón **“Generar colores Random”** que crea automáticamente una nueva paleta de colores. 
-- **Selector de cantidad de colores** con opciones predefinidas (por ejemplo, 6, 8, 9 colores). 
-- Campo numérico para **ingresar manualmente** la cantidad de colores a generar (dentro de un rango definido). 
-- Visualización de cada color con: 
-  - Título (Color 1, Color 2, etc.). 
-  - Código **HEX** (ejemplo: `#c6e052`). 
-  - Valor **HSL** (ejemplo: `hsl(0, 96%, 50%)`). 
-- Interfaz centrada en la creación de paletas de colores con una presentación clara y estructurada. 
-
-***
-
-## 📂 Estructura general del proyecto 
-
-La estructura del proyecto, de acuerdo al esquema actual, es:
-
-```bash
-ProyectoM1_JuanManuelVinuelaOrtiz/
-├── assest/
-│   └── img/
-│       ├── chromastudio_full_logo.png
-│       └── icon-paleta.png
-├── css/
-│   └── styles.css
-├── js/
-│   └── index.js
-├── index.html
-└── README.md
-```
-
-- La carpeta `asset/img` contiene los recursos gráficos utilizados en la interfaz (logo principal e ícono de paleta).  
-- La carpeta `css` contiene la hoja de estilos principal `styles.css`.  
-- La carpeta `js` contiene la lógica de la aplicación en el archivo `index.js`.  
-- `index.html` es el archivo de entrada de la aplicación. 
-
-Esta organización separa la estructura (HTML), los estilos (CSS) y la lógica (JavaScript) para mantener el código limpio y modular. 
-
-***
 
 ## 🛠️ Cómo ejecutar el proyecto de forma local
 
@@ -138,20 +100,87 @@ Si deseas trabajar de forma más profesional y evitar problemas con rutas relati
 
 ***
 
+
+***
+
+## 📂 Estructura general del proyecto 
+
+La estructura del proyecto, de acuerdo al esquema actual, es:
+
+```bash
+ProyectoM1_JuanManuelVinuelaOrtiz/
+├── assest/
+│   └── img/
+│       ├── chromastudio_full_logo.png
+│       └── icon-paleta.png
+│       └── ...
+├── css/
+│   └── styles.css
+├── js/
+│   └── index.js
+├── index.html
+├── chromaStudio.html
+└── README.md
+```
+
+- La carpeta `asset/img` contiene los recursos gráficos utilizados en la interfaz (logo principal, ícono de paleta, capturas).  
+- La carpeta `css` contiene la hoja de estilos principal `styles.css`.  
+- La carpeta `js` contiene la lógica de la aplicación en el archivo `index.js`.  
+- `index.html` es el archivo de entrada de la aplicación. 
+
+Esta organización separa la estructura (HTML), los estilos (CSS) y la lógica (JavaScript) para mantener el código limpio y modular. 
+
+***
+
+
 ## 🎛️ Cómo usar la aplicación
 
-1. Abre la aplicación en tu navegador (local o desde GitHub Pages). 
-2. Selecciona la cantidad de colores que deseas:  
-   - Desde el **selector de cantidad** (por ejemplo, 6 colores). 
-   - O escribiendo manualmente un número en el **campo numérico** (dentro del rango permitido 1-10). 
-3. Haz clic en el botón **“Generar colores Random”**. 
-4. Observa cómo se actualiza la paleta, mostrando para cada color:  
-   - Nombre o índice del color (Color 1, Color 2, etc.). 
-   - Código en **HEX**. 
-   - Representación en **HSL**. 
-5. Puedes usar el botón "📋" para **copiar** con un clic el valor HEX o HSL al portapapeles. 
 
-Esta dinámica permite experimentar rápidamente con distintas combinaciones y tamaños de paletas. 
+- Botón Switch **“AR-EN”** puede elegir en que idioma desea ver la pagina. Español (AR seleccionado) o Inglés (EN seleccionado).
+
+![Switch-Idioma](./assest/img/capturas/swES.png)
+![Switch-Idioma](./assest/img/capturas/swEN.png)
+
+
+- Botón **“Generar colores Random”** que crea automáticamente una nueva paleta de colores con la cantidad seleccionada. 
+
+![Boton-Generar](./assest/img/capturas/botonGen.png)
+
+
+- **Selector de cantidad de colores** con opciones predefinidas (por ejemplo, 6, 8, 9 colores), al hacer "click" en alguna opcion se recarga la paleta. 
+
+![Selector-Cantidad](./assest/img/capturas/selectorCant.png)
+
+
+- Campo numérico para **ingresar manualmente** la cantidad de colores a generar. 
+
+![input-Cantidad](./assest/img/capturas/inputCant.png)
+
+
+* Se puede tambien utilizar las flechas arriba o abajo para ir cambiando los numeros (solo se permiten números del 1 al 10):
+
+![input-Cantidad-select](./assest/img/capturas/inputCant_selector.png)
+
+
+* En caso de que ingrese un numero fuera del rango permitido o en algun formato no válido, no se realiza la operacion y obtiene un mensaje de error:
+
+![msn-error](./assest/img/capturas/MsnErrorCant.png)
+
+
+- Visualización de la paleta, por cada color generado podrá ver: 
+  - Título (Color 1, Color 2, etc.). 
+  - Código **HEX** (ejemplo: `#c6e052`). 
+  - Valor **HSL** (ejemplo: `hsl(0, 96%, 50%)`). 
+
+![paleta-generada](./assest/img/capturas/paletaGen.png) 
+
+
+- Puedes usar el botón "📋" para **copiar** con un clic el valor HEX o HSL al portapapeles, notará un mensaje que se copió correctamente y el icono cambiará por **"✔"**
+
+![paleta-generada](./assest/img/capturas/copyValor.png) 
+
+
+**Esta dinámica permite experimentar rápidamente con distintas combinaciones y tamaños de paletas.** 
 
 ***
 

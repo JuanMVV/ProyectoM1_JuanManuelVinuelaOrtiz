@@ -7,60 +7,88 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet" />
+      rel="stylesheet"
+    />
     <!-- referencia al archivo .css -->
     <link rel="stylesheet" href="./css/styles.css" />
     <title>ProyectoM1_JuanManuelViñuelaOrtiz</title>
-    <link rel="icon" href="./assest/img/icon-paleta.png" type="image/png">
+    <link rel="icon" href="./assest/img/icon-paleta.png" type="image/png" />
   </head>
 
   <body>
     <header>
       <nav class="nav">
-        <!-- referencia a la ubicacion del logo -->
-      <img src="./assest/img/chromastudio_full_logo.png" alt="ChromaStudio" class="navbar-logo">              
-      <h1>Chroma Studio</h1>
-      <ul class="nav_links">
-        <li><a class="nav_link" href="#controles">Generar Paleta</a></li>   
-        <!-- <li><a class="nav_link" href="#paletas-guardadas">Guardar Paleta</a></li>    -->
-      </ul>
+        <a href="./chromaStudio.html" target="_blank" rel="noopener">
+          <img src="./assest/img/chromastudio_full_logo.png" alt="ChromaStudio" class="navbar-logo"/>
+        </a>
+        <h1 data-i18n="app_title">Chroma Studio</h1>
+        <ul class="nav_links">
+          <li>
+            <div id="lang-switcher">
+              <button
+                class="lang-btn active"
+                data-lang="es"
+                aria-label="Español"
+              >
+                <span class="lang-flag">
+                  <img src="https://flagcdn.com/ar.svg" alt="Español" />
+                </span>
+                <span class="lang-label">ES</span>
+              </button>
+              <button class="lang-btn" data-lang="en" aria-label="English">
+                <span class="lang-flag">
+                  <img src="https://flagcdn.com/us.svg" alt="English" />
+                </span>
+                <span class="lang-label">EN</span>
+              </button>
+            </div>
+          </li>
+          <li>
+            <a class="nav_link" href="#controles" data-i18n="nav_generate_palette">Generar Paleta</a>
+          </li>
+        </ul>
       </nav>
     </header>
 
     <!-- Navegacion principal -->
     <main>
       <section id="generador-paleta">
-        <h2><span class="mayuscula">p</span>aleta de <span class="mayuscula">c</span>olores</h2>
+        <h2 data-i18n="palette_title">
+          <span class="mayuscula">p</span>aleta de <span class="mayuscula">c</span>olores
+        </h2>
 
         <!-- Boton generar: genera paleta de colores -->
-        <div class="controles"  id="controles">
-          <button class="boton boton-primario" id="generar">Generar colores Random</button>
+        <div class="controles" id="controles">
+          <button class="boton boton-primario" id="generar" data-i18n="btn_generate_random">Generar colores Random</button>
           <div class="controles_campo">
-            <label class="controles_label" for="cantidad">Seleccionar cantidad de colores</label>
+            <label
+              class="controles_label"
+              for="cantidad"
+              data-i18n="label_select_quantity"
+              >Seleccionar cantidad de colores</label>
             <select class="select" id="cantidad">
-              <option value="6">6 colores</option>
-              <option value="8">8 colores</option>
-              <option value="9">9 colores</option>
+              <option value="6" data-i18n="option_6_colors">6 colores</option>
+              <option value="8" data-i18n="option_8_colors">8 colores</option>
+              <option value="9" data-i18n="option_9_colors">9 colores</option>
             </select>
-            <label class="controles_label">ó escribir cantidad:</label>
-            <input id="input-cantidad" type="number" maxlength="2" min="1" max="10">
+            <label class="controles_label" data-i18n="label_or_write_quantity">ó escribir cantidad:</label>
+            <input id="input-cantidad" type="number" min="1" max="10"/>
           </div>
         </div>
 
         <section class="galeria" id="galeria"></section>
       </section>
-
-      <!-- <section id="paletas-guardadas">
-        <h4>Paletas de colores a Guardar</h4>
-      </section> -->
     </main>
 
     <footer>
-      <p>ChromaStudio © 2026 | Todos los derechos reservados | Términos y condiciones</p>
+      <p data-i18n="footer_text">
+        ChromaStudio © 2026 | Todos los derechos reservados | Términos y
+        condiciones
+      </p>
     </footer>
 
     <script src="./js/index.js"></script>
-    <div id="toast-error" class="toast_error"></div>
-    <div id="toast" class="toast"></div>
+    <div id="toast-error" class="toast_error" data-i18n="toast_error_default"></div>
+    <div id="toast" class="toast" data-i18n="toast_default"></div>
   </body>
 </html>
