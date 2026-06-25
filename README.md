@@ -11,7 +11,6 @@ El usuario puede:
 - Cambiar la cantidad de colores mediante un **selector** de opciones predefinidas. 
 - Especificar manualmente la cantidad de colores que desea generar escribiendo un valor numérico. 
 - Visualizar por cada color sus valores en formato **HEX** y **HSL** y tiene la posibilidad de copiarlos en el portapapeles.
-- Cambiar de idioma Español/Inglés
 
 ***
 
@@ -27,6 +26,17 @@ Este proyecto fue desarrollado utilizando el siguiente stack:
 - 🚀 **GitHub Pages** – Despliegue del sitio en producción. 
 
 ***
+
+## 🎨 Decisiones de diseño
+
+- Uso de etiquetas semánticas:
+  - header
+  - main
+  - section
+  - footer
+
+- Diseño responsive mediante Flexbox.
+- Paleta visual orientada a herramientas de diseño.
 
 ## 🔗 Enlace al proyecto desplegado
 
@@ -123,10 +133,11 @@ ProyectoM1_JuanManuelVinuelaOrtiz/
 └── README.md
 ```
 
-- La carpeta `asset/img` contiene los recursos gráficos utilizados en la interfaz (logo principal, ícono de paleta, capturas).  
+- La carpeta `assest/img` contiene los recursos gráficos utilizados en la interfaz (logo principal, ícono de paleta, capturas).  
 - La carpeta `css` contiene la hoja de estilos principal `styles.css`.  
 - La carpeta `js` contiene la lógica de la aplicación en el archivo `index.js`.  
 - `index.html` es el archivo de entrada de la aplicación. 
+- `chromaStudio.html` es el archivo de referencia para acceder a otra página. 
 
 Esta organización separa la estructura (HTML), los estilos (CSS) y la lógica (JavaScript) para mantener el código limpio y modular. 
 
@@ -136,33 +147,33 @@ Esta organización separa la estructura (HTML), los estilos (CSS) y la lógica (
 ## 🎛️ Cómo usar la aplicación
 
 
-- Botón Switch **“AR-EN”** puede elegir en que idioma desea ver la pagina. Español (AR seleccionado) o Inglés (EN seleccionado).
+- Con el botón **“ES-EN”** puedes elegir en qué idioma deseas ver la página: Español (ES seleccionado) o Inglés (EN seleccionado).
 
 ![Switch-Idioma](./assest/img/capturas/swES.png)
 ![Switch-Idioma](./assest/img/capturas/swEN.png)
 
 
-- Botón **“Generar colores Random”** que crea automáticamente una nueva paleta de colores con la cantidad seleccionada. 
+- El botón **“Generar colores Random”** crea automáticamente una nueva paleta de colores con la cantidad seleccionada.
 
 ![Boton-Generar](./assest/img/capturas/botonGen.png)
 
 
-- **Selector de cantidad de colores** con opciones predefinidas (por ejemplo, 6, 8, 9 colores), al hacer "click" en alguna opcion se recarga la paleta. 
+- **Selector de cantidad de colores** con opciones predefinidas (por ejemplo, 6, 8, 9 colores), al hacer "clic" en alguna opción se recarga la paleta. 
 
 ![Selector-Cantidad](./assest/img/capturas/selectorCant.png)
 
 
-- Campo numérico para **ingresar manualmente** la cantidad de colores a generar. 
+- Ó puede usear el campo numérico para **ingresar manualmente** la cantidad de colores que desee generar. 
 
 ![input-Cantidad](./assest/img/capturas/inputCant.png)
 
 
-* Se puede tambien utilizar las flechas arriba o abajo para ir cambiando los numeros (solo se permiten números del 1 al 10):
+* Se pueden también utilizar las flechas para arriba o para abajo para ir cambiando los números (solo se permiten números del 1 al 10):
 
 ![input-Cantidad-select](./assest/img/capturas/inputCant_selector.png)
 
 
-* En caso de que ingrese un numero fuera del rango permitido o en algun formato no válido, no se realiza la operacion y obtiene un mensaje de error:
+* En caso de que ingrese un número fuera del rango permitido o en algún formato no válido, no se realiza la operación y se mostrará un mensaje de error:
 
 ![msn-error](./assest/img/capturas/MsnErrorCant.png)
 
@@ -175,7 +186,7 @@ Esta organización separa la estructura (HTML), los estilos (CSS) y la lógica (
 ![paleta-generada](./assest/img/capturas/paletaGen.png) 
 
 
-- Puedes usar el botón "📋" para **copiar** con un clic el valor HEX o HSL al portapapeles, notará un mensaje que se copió correctamente y el icono cambiará por **"✔"**
+- Puedes usar el botón "📋" para **copiar** con un clic el valor HEX o HSL al portapapeles, notarás un mensaje que se copió correctamente y el icono cambiará por **"✔"**
 
 ![paleta-generada](./assest/img/capturas/copyValor.png) 
 
